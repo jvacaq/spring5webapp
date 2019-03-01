@@ -1,6 +1,8 @@
 package guru.springframework.spring5webapp.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -46,6 +48,9 @@ public class Author {
     }
 
     public Set<Book> getBooks() {
+        if (books == null){
+            this.books = new LinkedHashSet<>();
+        }
         return books;
     }
 
